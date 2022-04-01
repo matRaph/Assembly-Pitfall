@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from PIL import Image
 
 # Load the data variable with the selected image
-data = np.array(Image.open(r"C:\Users\rapha\OneDrive\Área de Trabalho\Facul\Arquitetura\Pitfall_Project/pitfallO.png"))
+data = np.array(Image.open(r"C:\Users\rapha\OneDrive\Área de Trabalho\Facul\Arquitetura\Pitfall_Project/pitfallC.png"))
 
 linhas = data.shape[0]
 colunas = data.shape[1]
