@@ -201,7 +201,7 @@ l3n63: .word 0x00ad6616 0x00ad6616 0x00ad6616 0x00ad6616 0x00ad6616 0x00ad6616 0
 .text
 	
 main:
-	#Calling load function to load frame 1 bitmap
+	#Calling load function to load frame 1 bitmap by loading it in $t4
 	frame1: lui $9, 0x1001
 		add $10, $0, $0
 		la $11, l3n0
@@ -214,7 +214,7 @@ main:
 				addi $t7, $t7, 1
 			 	j timerLoop
 	
-	#Calling load function to load frame 2 bitmap
+	#Calling load function to load frame 2 bitmap by loading it in $t4
 	frame2:	lui $9, 0x1001
    		add $10, $0, $0
    		la $11, l2n0
@@ -227,7 +227,8 @@ main:
 				addi $t7, $t7, 1
 			 	j timerLoop2
 
-#Function to load 	
+#Function to load the bitmap according to the frame placed as
+# a parameter in the $t4
 load:
     lw $12, 0($11)	
     sw $12, 0($9)
